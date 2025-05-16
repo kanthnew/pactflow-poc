@@ -22,15 +22,19 @@ jobs:
         run: npm install
 
       - name: Install Pact CLI
-        run: npm install -g @pact-foundation/pact
+        run: npm install -g @pact-foundation/pact-cli
+
 
       - name: publish provider pacts
         run: |
-          npx @pactflow/openapi-validator \
-          --pact-url https://yuvsmart.pactflow.io/pacts/provider/books-provider/consumer/books-consumer/latest \
-          --openapi ./provider/swagger.yml \
-          --broker-token ${{ secrets.PACT_BROKER_TOKEN }} \
-          --provider-base-url http://localhost:9000
+          pact-broker publish-provider-contract \
+          --provider "books-provider" \
+          --provider-app-version "1.0.0" \
+          --contract ./provider/swagger.yml \
+          --contract-type "oas" \
+          --content-type "application/yaml" \
+          --broker-base-url https://yuvsmart.pactflow.io \
+          --broker-token ${{ secrets.PACT_BROKER_TOKEN }}
 
       - name: Run provider verification
         run: |
