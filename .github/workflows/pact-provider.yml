@@ -27,10 +27,13 @@ jobs:
 
       - name: publish provider pacts
         run: |
-          pact-broker publish-provider-contract \
-          --provider "books-provider" \
+          docker run --rm \
+          -v ${PWD}:/app \
+          pactfoundation/pact-cli:latest \
+          publish-provider-contract \
+          --provider "my-provider" \
           --provider-app-version "1.0.0" \
-          --contract ./provider/swagger.yml \
+          --contract /app/provider/swagger.yml \
           --contract-type "oas" \
           --content-type "application/yaml" \
           --broker-base-url https://yuvsmart.pactflow.io \
