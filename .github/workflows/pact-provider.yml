@@ -26,7 +26,7 @@ jobs:
 
       - name: publish provider pacts
         run: |
-          pact-broker publish-provider-contract \
+          npx pact-broker publish-provider-contract \
             --provider books-provider \
             --provider-app-version 1.0.0 \
             --contract ./provider/swagger.yml \
@@ -45,7 +45,7 @@ jobs:
 
       - name: Publish verification result to PactFlow
         run: |
-          pact-broker record-verify-result \
+          npx pact-broker record-verify-result \
             --provider books-provider \
             --provider-version $GITHUB_SHA \
             --success true \
