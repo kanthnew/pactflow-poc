@@ -53,13 +53,13 @@ jobs:
           pactfoundation/pact-cli:0.50.0.28 \
           pactflow publish-provider-contract \
           provider/swagger.yml \
-          --broker-base-url https://yuvsmart.pactflow.io \
-          --provider "books-provider" \
-          --provider-app-version 0.0.1 \
-          --branch main \
-          --content-type application/yaml \
+          --broker-base-url=https://yuvsmart.pactflow.io \
+          --provider="books-provider" \
+          --provider-app-version=0.0.1 \
+          --branch=main \
+          --content-type=application/yaml \
           --verification-exit-code=0 \
-          --verification-results test-results/results.xml \
-          --verification-results-content-type text/plain \
-          -verification-results-format junit \
-          --verifier mocha
+          --verification-results=test-results/results.xml \
+          --verification-results-content-type=text/plain \
+          -verification-results-format=junit \
+          --verifier=mocha
