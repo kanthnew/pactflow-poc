@@ -1,0 +1,89 @@
+openapi: 3.0.4
+info:
+  version: 0.0.0
+  title: Swagger Petstore - OpenAPI 3.0
+  description: |-
+    This is a sample api OpenAPI 3.0 specification. 
+
+paths:
+  /book:
+    put:
+      requestBody:
+        description: Add new book
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/BookInput'
+      responses:
+        '201':
+          description: "test response"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+
+    post:
+      requestBody:
+        description: update existing book
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Book'
+      responses:
+        '200':
+          description: "test response"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+    
+  /book/{id}:  
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: "test response"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+  /books:
+    get:
+      responses:
+        '200':
+          description: "all books"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+    
+            
+
+
+components:
+  schemas:
+    BookInput:
+      type: object
+      properties:
+        name:
+          type: string
+        author:
+          type: string
+      required:
+        - name
+        - author
+    Book:
+      allOf:
+        - $ref: '#/components/schemas/BookInput'
+        - type: object
+          properties:
+            id:
+              type: integer
+              example: 123
