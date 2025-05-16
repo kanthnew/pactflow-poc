@@ -31,11 +31,12 @@ jobs:
           nohup npm run run_provider &> server.log &
 
       - name: Wait for server to be ready
-        uses: jakejarvis/wait-for-netlify-action@v1
-        with:
-          url: http://localhost:9000
-          timeout: 30
-
+        run: |
+          for i in {1..10}; do
+            curl -sSf http://localhost:9000 && break
+            echo "Waiting for server..."
+            sleep 3
+          done
       - name: Run provider verification
         run: |
           # Example: using pact-js to verify pacts
