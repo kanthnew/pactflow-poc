@@ -28,7 +28,13 @@ jobs:
       - name: Run provider 
         run: |
           # Example: using pact-js to verify pacts
-          npm run run_provider
+          nohup npm run run_provider &> server.log &
+
+      - name: Wait for server to be ready
+        uses: jakejarvis/wait-for-netlify-action@v1
+        with:
+          url: http://localhost:9000
+          timeout: 30
 
       - name: Run provider verification
         run: |
