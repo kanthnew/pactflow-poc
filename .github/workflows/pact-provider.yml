@@ -30,7 +30,7 @@ jobs:
           docker run --rm \
           -v ${PWD}:/app \
           pactfoundation/pact-cli:latest \
-          publish-provider-contract \
+          pact-broker publish-provider-contract \
           --provider "my-provider" \
           --provider-app-version "1.0.0" \
           --contract /app/provider/swagger.yml \
