@@ -26,14 +26,11 @@ jobs:
 
       - name: publish provider pacts
         run: |
-          npx pact-broker publish-provider-contract \
-            --provider books-provider \
-            --provider-app-version 1.0.0 \
-            --contract ./provider/swagger.yml \
-            --contract-type "oas" \
-            --content-type "application/yaml" \
-            --broker-base-url https://yuvsmart.pactflow.io \
-            --broker-token ${{ secrets.PACT_BROKER_TOKEN }}
+          npx @pactflow/openapi-validator \
+          --pact-url https://yuvsmart.pactflow.io/pacts/provider/books-provider/consumer/books-consumer/latest \
+          --openapi ./provider/swagger.yml \
+          --broker-token ${{ secrets.PACT_BROKER_TOKEN }} \
+          --provider-base-url http://localhost:9000
 
       - name: Run provider verification
         run: |
