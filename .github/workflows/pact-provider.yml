@@ -48,18 +48,14 @@ jobs:
       - name: publish provider pacts
         run: |
           docker run --rm -v /${PWD}:/${PWD} -w ${PWD} \
-          -e https://yuvsmart.pactflow.io \
-          -e ${{ secrets.PACT_BROKER_TOKEN }} \
-          pactfoundation/pact-cli:0.50.0.28 \
-          pactflow publish-provider-contract \
-          provider/swagger.yml \
-          --broker-base-url=https://yuvsmart.pactflow.io \
-          --provider="books-provider" \
-          --provider-app-version=0.0.1 \
-          --branch=main \
-          --content-type=application/yaml \
-          --verification-exit-code=0 \
-          --verification-results=test-results/results.xml \
-          --verification-results-content-type=text/plain \
-          -verification-results-format=junit \
-          --verifier=mocha
+          -e PACT_BROKER_TOKEN=${{ secrets.PACT_BROKER_TOKEN }} \
+          pactfoundation/pact-cli:latest \
+          pactflow publish-provider-contract ./provider/swagger.yml --provider books-provider --provider-app-version 0.0.1  \
+          --broker-base-url https://yuvsmart.pactflow.io \
+          --branch main \
+          --content-type application/yaml \
+          --verification-exit-code 0 \
+          --verification-results test-results/results.xml \
+          --verification-results-content-type text/plain \
+          --verification-results-format junit \
+          --verifier postman
