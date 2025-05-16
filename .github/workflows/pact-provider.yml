@@ -25,12 +25,15 @@ jobs:
         run: npm install -g @pact-foundation/pact-cli
 
 
-
+      - name: Run provider 
+        run: |
+          # Example: using pact-js to verify pacts
+          npm run run_provider
 
       - name: Run provider verification
         run: |
           # Example: using pact-js to verify pacts
-          npm run test:provider
+          npm run run_provider_tests
         env:
           PACT_BROKER_BASE_URL: https://yuvsmart.pactflow.io
           PACT_BROKER_TOKEN: ${{ secrets.PACT_BROKER_TOKEN }}
