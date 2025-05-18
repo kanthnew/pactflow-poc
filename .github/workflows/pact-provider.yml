@@ -50,7 +50,7 @@ jobs:
           docker run --rm -v /${PWD}:/${PWD} -w ${PWD} \
           -e PACT_BROKER_TOKEN=${{ secrets.PACT_BROKER_TOKEN }} \
           pactfoundation/pact-cli:latest \
-          pactflow publish-provider-contract ./provider/swagger.yml --provider books-provider --provider-app-version 0.0.1  \
+          pactflow publish-provider-contract ./src/provider/swagger.yml --provider books-provider --provider-app-version 0.0.1  \
           --broker-base-url https://yuvsmart.pactflow.io \
           --branch main \
           --content-type application/yaml \
