@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="0.035" tests="5" failures="0">
-  <testsuite name="Root Suite" timestamp="2025-05-16T16:04:58" tests="0" time="0.000" failures="0">
+<testsuites name="Mocha Tests" time="0.060" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-05-18T07:24:49" tests="0" time="0.000" failures="0">
   </testsuite>
-  <testsuite name="Book API" timestamp="2025-05-16T16:04:58" tests="5" file="/Users/sreekanth/Documents/GitHub/pactflow-poc/provider/test/bookApi.test.js" time="0.035" failures="0">
-    <testcase name="Book API should create a new book (PUT /book)" time="0.019" classname="should create a new book (PUT /book)">
+  <testsuite name="Book API" timestamp="2025-05-18T07:24:49" tests="5" file="/Users/sreekanth/Documents/GitHub/pactflow-poc/src/provider/test/bookApi.test.ts" time="0.058" failures="0">
+    <testcase name="Book API should create a new book (PUT /book)" time="0.036" classname="should create a new book (PUT /book)">
     </testcase>
-    <testcase name="Book API should update the book (POST /book)" time="0.006" classname="should update the book (POST /book)">
+    <testcase name="Book API should update the book (POST /book)" time="0.008" classname="should update the book (POST /book)">
     </testcase>
-    <testcase name="Book API should list all books (GET /books)" time="0.004" classname="should list all books (GET /books)">
+    <testcase name="Book API should list all books (GET /books)" time="0.005" classname="should list all books (GET /books)">
     </testcase>
-    <testcase name="Book API should delete the book (DELETE /book/:id)" time="0.002" classname="should delete the book (DELETE /book/:id)">
+    <testcase name="Book API should delete the book (DELETE /book/:id)" time="0.004" classname="should delete the book (DELETE /book/:id)">
     </testcase>
-    <testcase name="Book API should return 404 for deleted book (DELETE again)" time="0.002" classname="should return 404 for deleted book (DELETE again)">
+    <testcase name="Book API should return 404 for deleted book (DELETE again)" time="0.003" classname="should return 404 for deleted book (DELETE again)">
     </testcase>
   </testsuite>
 </testsuites>

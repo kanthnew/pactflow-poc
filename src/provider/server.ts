@@ -1,13 +1,12 @@
-const express = require('express');
+import express from 'express'
 const app = express();
 const PORT = process.env.PROVIDER_PORT;
 
 app.use(express.json());
 
-let books = [];
-let currentId = 1;
 
-const bookService = require('./services/booksService')
+
+import bookService from './services/booksService';
 
 // PUT /book — Add a new book
 app.put('/book', (req, res) => {
@@ -23,8 +22,13 @@ app.post('/book', (req, res) => {
 
 // DELETE /book/:id
 app.delete('/book/:id', (req, res) => {
-    const deletedBook = bookService.deletedBook()
-    res.status(200).json(deletedBook);
+    const deletedBook = bookService.deleteBook(req.params.id)
+    if (deletedBook.errorCode){
+        res.status(deletedBook.errorCode).json(deletedBook);
+    }else{
+        res.status(200).json(deletedBook);
+    }
+    
 });
 
 // GET /books — Get all books

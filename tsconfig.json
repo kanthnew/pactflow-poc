@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "ES2020", // JavaScript version output
+        "module": "CommonJS", // Module system (use "ESNext" for ESM projects)
+        "rootDir": "./src", // Source code location
+        "outDir": "./dist", // Compiled output location
+        "strict": false, // Enable all strict type checks
+        "esModuleInterop": true, // Allow default imports from CommonJS modules
+        "forceConsistentCasingInFileNames": true, // Ensure consistent casing across file imports
+        "skipLibCheck": true, // Skip type checking of declaration files
+        "resolveJsonModule": true, // Enable importing JSON files
+        "moduleResolution": "node", // Resolve using Node.js-style rules
+        "types": [
+            "node","mocha"
+        ], // Include Node.js types
+        "sourceMap": true // Generate `.map` files for debugging
+    },
+    "include": [
+        "src/**/*"
+    ], // Include all files in src/
+    "exclude": [
+        "node_modules",
+        "dist"
+    ] // Exclude build and dependencies
+}
