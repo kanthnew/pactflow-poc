@@ -1,0 +1,24 @@
+{
+    "request": {
+        "method": "POST",
+        "url": "/book",
+        "bodyPatterns": [
+            {
+                "matchesJsonPath": "$[?(@.id =~ /^[0-9]+(\\.[0-9]+)?$/)]"
+            },
+            {
+                "matchesJsonPath": "$[?(@.name =~ /.+/)]"
+            },
+            {
+                "matchesJsonPath": "$[?(@.author =~ /.+/)]"
+            }
+        ]
+    },
+    "response": {
+        "status": 200,
+        "bodyFileName": "book.json",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}
