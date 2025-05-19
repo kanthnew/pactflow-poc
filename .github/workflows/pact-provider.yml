@@ -66,3 +66,6 @@ jobs:
             -e PACT_BROKER_TOKEN=${{ secrets.PACT_BROKER_TOKEN }} \
             pactfoundation/pact-cli:latest \
             broker can-i-deploy --pacticipant book-provider --version 0.0.1 --to-environment production
+        env:
+          PACT_BROKER_BASE_URL: https://yuvsmart.pactflow.io
+          PACT_BROKER_TOKEN: ${{ secrets.PACT_BROKER_TOKEN }}
