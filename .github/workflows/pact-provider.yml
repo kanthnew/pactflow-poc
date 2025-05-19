@@ -59,3 +59,10 @@ jobs:
           --verification-results-content-type text/plain \
           --verification-results-format junit \
           --verifier postman
+
+      - name: provider pact can-i-deploy check
+        run: |
+            docker run --rm -v /${PWD}:/${PWD} -w ${PWD} \
+            -e PACT_BROKER_TOKEN=${{ secrets.PACT_BROKER_TOKEN }} \
+            pactfoundation/pact-cli:latest \
+            broker can-i-deploy --pacticipant book-provider --version 0.0.1 --to-environment production

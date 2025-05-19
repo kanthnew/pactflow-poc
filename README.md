@@ -5,16 +5,13 @@ Objective of PoC to implement basic scenario for different use cases
 | Provider/Consumer | Use case scenario                   | Status |
 |-------------------|-------------------------------------|--------|
 | openAPI spec      | Publish provider pact openAPI spec | Done   |
-| openAPI spec      | provider pact tests                | Done   |
-| openAPI spec      | Publish verify-provider pacts      |        |
+| openAPI spec      | provider pact test and publish               | Done   |
 | openAPI spec      | Provider can-i-deploy check        |        |
 | API client        | Consumer API client Pact tests     |        |
-| API client        | Consumer Pact publish              |        |
-| API client        | Publish verify-consumer pacts      |        |
+| API client        | Consumer Pact test and publish              |        |
 | API client        | Consumer can-i-deploy check        |        |
 | Web UI client     | Consumer API client Pact tests     |        |
-| Web UI client     | Consumer Pact publish              |        |
-| Web UI client     | Publish verify-consumer pacts      |        |
+| Web UI client     | Consumer Pact test and publish              |        |
 | Web UI client     | Consumer can-i-deploy check        |        |
 
 
