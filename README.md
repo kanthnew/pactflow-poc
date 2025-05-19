@@ -20,22 +20,25 @@ Objective of PoC to implement basic scenario for different use cases
 
 # pactflow knowledge base/capabilities/comparison ...
 
-## Pact open source vs pact flow
+## Pact open source vs pactflow
 
 https://pactflow.io/oss/
 
 
-## Cypress pact adapter benefits:
-
-- Can be used to validate pacts from UI code
-- 
-
+## Sample pactflow managed instance (trial)
 [Sample pactflow managed instance](https://yuvsmart.pactflow.io/pacticipants/books-provider/versions/0.0.1?branch=main)
-
 
 
 ## Consumer Adapters available
 https://docs.pactflow.io/docs/bi-directional-contract-testing/tools
+
+
+### Cypress pact adapter benefits:
+
+- Can be used to validate pacts from UI code
+- Integreates with cypress UI tests to validate client against contract using mock
+- Generate Pacts from tests
+
 
 
 ## workflow of consumer and provider contracts
