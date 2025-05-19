@@ -6,7 +6,7 @@ Objective of PoC to implement basic scenario for different use cases
 |-------------------|-------------------------------------|--------|
 | openAPI spec      | Publish provider pact openAPI spec | Done   |
 | openAPI spec      | provider pact test and publish               | Done   |
-| openAPI spec      | Provider can-i-deploy check        |        |
+| openAPI spec      | Provider can-i-deploy check        |  Done      |
 | API client        | Consumer API client Pact tests     |        |
 | API client        | Consumer Pact test and publish              |        |
 | API client        | Consumer can-i-deploy check        |        |
